@@ -1,4 +1,4 @@
-# $Revision: 1.2 $Date: 2005-03-15 13:44:09 $
+# $Revision: 1.3 $Date: 2005-03-15 13:49:22 $
 %define		_rel	cvs
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
@@ -18,7 +18,9 @@ Xfce developers and people that want to build Xfce from CVS. In
 addition it contains the Xfce developer's handbook.
 
 %description -l pl
-Narzêdzia programistyczne Xfce s± zbiorem programów oraz makr przeznaczonych dla deweloperów Xfce oraz ludzi którzy chc± zbudowaæ Xfce z CVSa. Dodatkowo zawiera podrêcznik dewelopera Xfce.
+Narzêdzia programistyczne Xfce s± zbiorem programów oraz makr
+przeznaczonych dla deweloperów Xfce oraz ludzi którzy chc± zbudowaæ
+Xfce z CVSa. Dodatkowo zawiera podrêcznik dewelopera Xfce.
 
 %prep
 %setup -q -n %{name}-%{version}%{_rel}
@@ -38,6 +40,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README 
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/xfce4/dev-tools/m4macros/*

@@ -1,0 +1,11 @@
+--- xfce4-dev-tools-4.3.0cvs/scripts/xdt-autogen.in	2005-03-08 16:16:23.000000000 +0100
++++ fix/xfce4-dev-tools-4.3.0cvs/scripts/xdt-autogen.in	2005-03-16 19:59:35.386575280 +0100
+@@ -36,7 +36,7 @@
+     CONFIGURE_FILES="$CONFIGURE_FILES $configure_file";
+   fi
+ 
+-  subdirs=`cat ${configure_file} | tr '\n\t\\' '   ' | sed -ne 's|.*AC_CONFIG_SUBDIRS(\[\{0,1\}\([[:alnum:]_ @/-]\{1,\}\).*|\1|p'`
++  subdirs=`cat ${configure_file} | tr '\n\t\\\\' '   ' | sed -ne 's|.*AC_CONFIG_SUBDIRS(\[\{0,1\}\([[:alnum:]_ @/-]\{1,\}\).*|\1|p'`
+   for subdir in $subdirs; do
+     lookup_configure_files "$1/$subdir";
+   done

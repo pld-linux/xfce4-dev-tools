@@ -1,4 +1,4 @@
-# $Revision: 1.1 $Date: 2005-03-15 13:01:01 $
+# $Revision: 1.2 $Date: 2005-03-15 13:44:09 $
 %define		_rel	cvs
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
@@ -10,9 +10,6 @@ Group:		Development/Building
 Source0:	http://www.xfce.org/~benny/trials/%{name}-%{version}%{_rel}.tar.gz
 # Source0-md5:	dcdea5e5b5215687e72f080f766c5b07
 URL:		http://www.xfce.org/
-#BuildRequires:	-
-#Requires:	-
-#Provides:	-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,20 +18,12 @@ Xfce developers and people that want to build Xfce from CVS. In
 addition it contains the Xfce developer's handbook.
 
 %description -l pl
-Narzêdzia programistyczne Xfce.
+Narzêdzia programistyczne Xfce s± zbiorem programów oraz makr przeznaczonych dla deweloperów Xfce oraz ludzi którzy chc± zbudowaæ Xfce z CVSa. Dodatkowo zawiera podrêcznik dewelopera Xfce.
 
 %prep
 %setup -q -n %{name}-%{version}%{_rel}
 
 %build
-# if ac/am/* rebuilding is necessary, do it in this order and add
-# appropriate BuildRequires
-#%%{__gettextize}
-#%%{__libtoolize}
-#%%{__aclocal}
-#%%{__autoconf}
-#%%{__autoheader}
-#%%{__automake}
 %configure
 %{__make}
 

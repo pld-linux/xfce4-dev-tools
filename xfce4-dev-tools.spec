@@ -1,14 +1,15 @@
-# $Revision: 1.4 $Date: 2005-03-15 23:30:15 $
+# $Revision: 1.5 $Date: 2005-03-16 19:06:23 $
 %define		_rel	cvs
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
 Name:		xfce4-dev-tools
 Version:	4.3.0
-Release:	0.%{_rel}.1
+Release:	0.%{_rel}.2
 License:	GPL v2
 Group:		Development/Building
 Source0:	http://www.xfce.org/~benny/trials/%{name}-%{version}%{_rel}.tar.gz
 # Source0-md5:	dcdea5e5b5215687e72f080f766c5b07
+Patch0:		%{name}-xdt-autogen_bash_fix.patch
 URL:		http://www.xfce.org/
 Requires:	libxfce4util >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,6 +26,7 @@ Xfce z CVS-u. Dodatkowo zawiera podrêcznik programisty Xfce.
 
 %prep
 %setup -q -n %{name}-%{version}%{_rel}
+%patch0 -p1
 
 %build
 %configure

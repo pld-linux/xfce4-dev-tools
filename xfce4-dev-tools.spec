@@ -1,15 +1,14 @@
-# $Revision: 1.6 $Date: 2005-04-14 00:41:12 $
-%define		_snap	20050410
+# $Revision: 1.7 $Date: 2005-11-13 22:25:33 $
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
 Name:		xfce4-dev-tools
 Version:	4.3.0
-Release:	0.%{_snap}.1
+Release:	1
 License:	GPL v2
 Group:		Development/Building
-Source0:	http://spuriousinterrupt.org/projects/xfmedia/files/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	84d6b95d3d02f023c679e02addf0068f
-URL:		http://www.xfce.org/
+Source0:	http://www.foo-projects.org/~benny/files/xfce4-dev-tools/4.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	42b2fe6056bc5525cc5448979bef3301
+URL:		http://www.home.unix-ag.org/bmeurer/projects/xfce4-dev-tools/
 Requires:	libxfce4util >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -24,7 +23,7 @@ przeznaczonych dla programistów Xfce oraz ludzi którzy chc± zbudowaæ
 Xfce z CVS-u. Dodatkowo zawiera podrêcznik programisty Xfce.
 
 %prep
-%setup -q -n %{name}-%{_snap}
+%setup -q
 
 %build
 %configure

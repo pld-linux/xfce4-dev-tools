@@ -1,4 +1,4 @@
-# $Revision: 1.8.2.2 $Date: 2006-04-18 21:27:51 $
+# $Revision: 1.8.2.3 $Date: 2006-04-18 21:32:18 $
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
 Name:		xfce4-dev-tools

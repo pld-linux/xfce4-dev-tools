@@ -1,4 +1,4 @@
-# $Revision: 1.8.2.1 $Date: 2006-04-18 19:25:55 $
+# $Revision: 1.8.2.2 $Date: 2006-04-18 21:27:51 $
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
 Name:		xfce4-dev-tools
@@ -9,7 +9,6 @@ Group:		Development/Building
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	1019947e31acfcd367c9ecb9aa579c92
 URL:		http://xfce.org/~benny/projects/xfce4-dev-tools/
-Requires:	libxfce4util >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

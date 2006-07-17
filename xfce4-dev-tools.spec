@@ -1,15 +1,14 @@
-# $Revision: 1.8 $Date: 2006-03-24 17:00:45 $
+# $Revision: 1.9 $Date: 2006-07-17 17:54:10 $
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
 Name:		xfce4-dev-tools
-Version:	4.3.0
-Release:	2
+Version:	4.3.90.2
+Release:	1
 License:	GPL v2
 Group:		Development/Building
-Source0:	http://www.foo-projects.org/~benny/files/xfce4-dev-tools/4.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	42b2fe6056bc5525cc5448979bef3301
-URL:		http://www.home.unix-ag.org/bmeurer/projects/xfce4-dev-tools/
-Requires:	libxfce4util >= 4.2
+Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	2cf48dc426f971896c955bc197fe0b68
+URL:		http://xfce.org/~benny/projects/xfce4-dev-tools/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +32,8 @@ Xfce z CVS-u. Dodatkowo zawiera podrêcznik programisty Xfce.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	macrodir=%{_aclocaldir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -42,4 +42,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/xfce4/dev-tools
+%{_aclocaldir}/*.m4

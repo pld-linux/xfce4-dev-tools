@@ -1,13 +1,13 @@
-# $Revision: 1.11 $Date: 2006-09-06 07:40:46 $
+# $Revision: 1.12 $Date: 2006-11-05 17:20:27 $
 Summary:	Xfce development tools
 Summary(pl):	Narzêdzia programistyczne Xfce
 Name:		xfce4-dev-tools
-Version:	4.3.99.1
+Version:	4.3.99.2
 Release:	1
 License:	GPL v2
 Group:		Development/Building
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	dc6403caf82edfb896eb3878385b439a
+# Source0-md5:	6f79a59eb7ed5a9a5e8ebef253a704f8
 URL:		http://xfce.org/~benny/projects/xfce4-dev-tools/
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

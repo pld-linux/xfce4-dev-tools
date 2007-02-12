@@ -1,6 +1,6 @@
-# $Revision: 1.13 $Date: 2007-01-21 18:49:57 $
+# $Revision: 1.14 $Date: 2007-02-12 01:06:38 $
 Summary:	Xfce development tools
-Summary(pl):	Narzêdzia programistyczne Xfce
+Summary(pl.UTF-8):   NarzÄ™dzia programistyczne Xfce
 Name:		xfce4-dev-tools
 Version:	4.4.0
 Release:	1
@@ -17,10 +17,10 @@ The Xfce development tools are a collection of tools and macros for
 Xfce developers and people that want to build Xfce from CVS. In
 addition it contains the Xfce developer's handbook.
 
-%description -l pl
-Narzêdzia programistyczne Xfce s± zbiorem programów oraz makr
-przeznaczonych dla programistów Xfce oraz ludzi którzy chc± zbudowaæ
-Xfce z CVS-u. Dodatkowo zawiera podrêcznik programisty Xfce.
+%description -l pl.UTF-8
+NarzÄ™dzia programistyczne Xfce sÄ… zbiorem programÃ³w oraz makr
+przeznaczonych dla programistÃ³w Xfce oraz ludzi ktÃ³rzy chcÄ… zbudowaÄ‡
+Xfce z CVS-u. Dodatkowo zawiera podrÄ™cznik programisty Xfce.
 
 %prep
 %setup -q

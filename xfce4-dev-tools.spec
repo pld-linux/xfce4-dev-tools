@@ -1,6 +1,6 @@
-# $Revision: 1.14 $Date: 2007-02-12 01:06:38 $
+# $Revision: 1.15 $Date: 2007-02-12 22:09:22 $
 Summary:	Xfce development tools
-Summary(pl.UTF-8):   Narzędzia programistyczne Xfce
+Summary(pl.UTF-8):	Narzędzia programistyczne Xfce
 Name:		xfce4-dev-tools
 Version:	4.4.0
 Release:	1

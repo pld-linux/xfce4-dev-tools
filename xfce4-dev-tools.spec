@@ -1,4 +1,3 @@
-# $Revision: 1.19 $Date: 2009-02-27 13:06:45 $
 Summary:	Xfce development tools
 Summary(pl.UTF-8):	Narzędzia programistyczne Xfce
 Name:		xfce4-dev-tools

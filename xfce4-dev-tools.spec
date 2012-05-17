@@ -43,4 +43,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog HACKING NEWS README
 %attr(755,root,root) %{_bindir}/xdt-autogen
 %attr(755,root,root) %{_bindir}/xdt-commit
+%attr(755,root,root) %{_bindir}/xdt-csource
 %{_aclocaldir}/*.m4

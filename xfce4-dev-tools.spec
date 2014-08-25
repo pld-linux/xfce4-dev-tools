@@ -8,18 +8,24 @@ Group:		Development/Building
 Source0:	http://archive.xfce.org/src/xfce/xfce4-dev-tools/4.11/%{name}-%{version}.tar.bz2
 # Source0-md5:	36112d0256092c30bd1b47105c547edf
 URL:		http://xfce.org/~benny/projects/xfce4-dev-tools/
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.8
+BuildRequires:	glib2-devel >= 1:2.24.0
+BuildRequires:	pkgconfig
+Requires:	glib2 >= 1:2.24.0
+Conflicts:	autoconf < 2.53
+Conflicts:	pkgconfig < 1:0.9.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The Xfce development tools are a collection of tools and macros for
-Xfce developers and people that want to build Xfce from CVS. In
+Xfce developers and people that want to build Xfce from Git. In
 addition it contains the Xfce developer's handbook.
 
 %description -l pl.UTF-8
 Narzędzia programistyczne Xfce są zbiorem programów oraz makr
 przeznaczonych dla programistów Xfce oraz ludzi którzy chcą zbudować
-Xfce z CVS-u. Dodatkowo zawiera podręcznik programisty Xfce.
+Xfce z repozytorium Git. Dodatkowo zawiera podręcznik programisty
+Xfce.
 
 %prep
 %setup -q
@@ -44,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xdt-autogen
 %attr(755,root,root) %{_bindir}/xdt-commit
 %attr(755,root,root) %{_bindir}/xdt-csource
-%{_aclocaldir}/*.m4
+%{_aclocaldir}/xdt-*.m4

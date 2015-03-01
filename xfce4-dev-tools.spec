@@ -2,7 +2,7 @@ Summary:	Xfce development tools
 Summary(pl.UTF-8):	Narzędzia programistyczne Xfce
 Name:		xfce4-dev-tools
 Version:	4.11.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Building
 Source0:	http://archive.xfce.org/src/xfce/xfce4-dev-tools/4.11/%{name}-%{version}.tar.bz2

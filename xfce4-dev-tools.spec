@@ -1,18 +1,18 @@
 Summary:	Xfce development tools
 Summary(pl.UTF-8):	Narzędzia programistyczne Xfce
 Name:		xfce4-dev-tools
-Version:	4.12.0
+Version:	4.13.0
 Release:	1
 License:	GPL v2
 Group:		Development/Building
-Source0:	http://archive.xfce.org/src/xfce/xfce4-dev-tools/4.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	559202c4d9650e23696c44aa94cfc5a9
+Source0:	http://archive.xfce.org/src/xfce/xfce4-dev-tools/4.13/%{name}-%{version}.tar.bz2
+# Source0-md5:	dc7ce082ed0fb9a8f2c0953a939b8d42
 URL:		http://xfce.org/~benny/projects/xfce4-dev-tools/
-BuildRequires:	automake >= 1:1.8
-BuildRequires:	glib2-devel >= 1:2.30.0
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	glib2-devel >= 1:2.42.0
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.30.0
-Conflicts:	autoconf < 2.53
+Requires:	glib2 >= 1:2.42.0
+Conflicts:	autoconf < 2.60
 Conflicts:	pkgconfig < 1:0.9.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,7 +31,8 @@ Xfce.
 %setup -q
 
 %build
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -48,6 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog HACKING NEWS README
 %attr(755,root,root) %{_bindir}/xdt-autogen
-%attr(755,root,root) %{_bindir}/xdt-commit
 %attr(755,root,root) %{_bindir}/xdt-csource
 %{_aclocaldir}/xdt-*.m4

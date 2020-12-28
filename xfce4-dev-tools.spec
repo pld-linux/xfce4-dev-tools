@@ -1,17 +1,17 @@
 Summary:	Xfce development tools
 Summary(pl.UTF-8):	Narzędzia programistyczne Xfce
 Name:		xfce4-dev-tools
-Version:	4.14.0
+Version:	4.16.0
 Release:	1
 License:	GPL v2
 Group:		Development/Building
-Source0:	http://archive.xfce.org/src/xfce/xfce4-dev-tools/4.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	5f8fc8af73819c08d9e4c26a3ac457e7
+Source0:	http://archive.xfce.org/src/xfce/xfce4-dev-tools/4.16/%{name}-%{version}.tar.bz2
+# Source0-md5:	4341c604f3d6198076167c5a2a2d27ea
 URL:		http://xfce.org/~benny/projects/xfce4-dev-tools/
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	glib2-devel >= 1:2.42.0
+BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.42.0
+Requires:	glib2 >= 1:2.50.0
 Conflicts:	autoconf < 2.60
 Conflicts:	pkgconfig < 1:0.9.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,6 +29,8 @@ Xfce.
 
 %prep
 %setup -q
+%{__sed} -i '1s,/usr/bin/env bash$,%{__bash},' \
+		helpers/{xfce-get-release-notes,xfce-update-news}
 
 %build
 %configure \
@@ -47,7 +49,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog HACKING NEWS README
+%doc AUTHORS ChangeLog HACKING NEWS
+%{_mandir}/man1/xdt-csource.1*
 %attr(755,root,root) %{_bindir}/xdt-autogen
 %attr(755,root,root) %{_bindir}/xdt-csource
+%attr(755,root,root) %{_bindir}/xfce-build
+%attr(755,root,root) %{_bindir}/xfce-do-release
+%attr(755,root,root) %{_bindir}/xfce-get-release-notes
+%attr(755,root,root) %{_bindir}/xfce-get-translations
+%attr(755,root,root) %{_bindir}/xfce-update-news
 %{_aclocaldir}/xdt-*.m4

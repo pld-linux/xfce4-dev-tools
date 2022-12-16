@@ -1,13 +1,13 @@
 Summary:	Xfce development tools
 Summary(pl.UTF-8):	Narzędzia programistyczne Xfce
 Name:		xfce4-dev-tools
-Version:	4.16.0
+Version:	4.18.0
 Release:	1
 License:	GPL v2
 Group:		Development/Building
-Source0:	http://archive.xfce.org/src/xfce/xfce4-dev-tools/4.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	4341c604f3d6198076167c5a2a2d27ea
-URL:		http://xfce.org/~benny/projects/xfce4-dev-tools/
+Source0:	https://archive.xfce.org/src/xfce/xfce4-dev-tools/4.18/%{name}-%{version}.tar.bz2
+# Source0-md5:	24ea05b8f77365f17c9d63263816ec11
+URL:		https://xfce.org/~benny/projects/xfce4-dev-tools/
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	pkgconfig
@@ -30,7 +30,7 @@ Xfce.
 %prep
 %setup -q
 %{__sed} -i '1s,/usr/bin/env bash$,%{__bash},' \
-		helpers/{xfce-get-release-notes,xfce-update-news}
+		helpers/{xfce-get-release-notes,xfce-update-news,xfce-do-release,xfce-get-translations}
 
 %build
 %configure \

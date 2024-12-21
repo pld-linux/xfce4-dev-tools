@@ -1,17 +1,17 @@
 Summary:	Xfce development tools
 Summary(pl.UTF-8):	Narzędzia programistyczne Xfce
 Name:		xfce4-dev-tools
-Version:	4.18.1
+Version:	4.20.0
 Release:	1
 License:	GPL v2
 Group:		Development/Building
-Source0:	https://archive.xfce.org/src/xfce/xfce4-dev-tools/4.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	69b4cd255a0b8f12bbdc9b10c433b223
+Source0:	https://archive.xfce.org/src/xfce/xfce4-dev-tools/4.20/%{name}-%{version}.tar.bz2
+# Source0-md5:	bea58046e67b4274c022fcff893fa350
 URL:		https://xfce.org/~benny/projects/xfce4-dev-tools/
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	glib2-devel >= 1:2.72.0
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.50.0
+Requires:	glib2 >= 1:2.72.0
 Conflicts:	autoconf < 2.60
 Conflicts:	pkgconfig < 1:0.9.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,7 +30,10 @@ Xfce.
 %prep
 %setup -q
 %{__sed} -i '1s,/usr/bin/env bash$,%{__bash},' \
-		helpers/{xfce-get-release-notes,xfce-update-news,xfce-do-release,xfce-get-translations}
+		helpers/{xfce-do-release.in,xfce-get-release-notes,xfce-get-translations,xfce-update-news}
+
+%{__sed} -i '1s,/usr/bin/env python3$,%{__python3},' \
+		scripts/xdt-gen-visibility
 
 %build
 %configure \
@@ -52,7 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog HACKING NEWS
 %{_mandir}/man1/xdt-csource.1*
 %attr(755,root,root) %{_bindir}/xdt-autogen
+%attr(755,root,root) %{_bindir}/xdt-check-abi
 %attr(755,root,root) %{_bindir}/xdt-csource
+%attr(755,root,root) %{_bindir}/xdt-gen-visibility
 %attr(755,root,root) %{_bindir}/xfce-build
 %attr(755,root,root) %{_bindir}/xfce-do-release
 %attr(755,root,root) %{_bindir}/xfce-get-release-notes
